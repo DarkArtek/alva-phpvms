@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Contracts\Controller;
 use App\Http\Requests\CreatePirepRequest;
 use App\Http\Requests\UpdatePirepRequest;
+use App\Models\Airport;
 use App\Models\Enums\PirepSource;
 use App\Models\Enums\PirepState;
 use App\Models\Fare;
@@ -320,6 +321,15 @@ class PirepController extends Controller
         } else {
             $aircraft_list = $this->aircraftList(true);
         }
+        $airport_list = [];
+
+        if($pirep !== null) {
+            $departure_airport = Airport::find($pirep->dpt_airport_id);
+            $arrival_airport = Airport::find($pirep->arr_airport_id);
+
+            $airport_list[$departure_airport->id] = "{$departure_airport->icao} - {$departure_airport->name}";
+            $airport_list[$arrival_airport->id] = "{$arrival_airport->icao} - {$arrival_airport->name}";
+        }
 
         return view('pireps.create', [
             'aircraft'      => $aircraft,
@@ -327,7 +337,7 @@ class PirepController extends Controller
             'read_only'     => false,
             'airline_list'  => $this->airlineRepo->selectBoxList(true),
             'aircraft_list' => $aircraft_list,
-            'airport_list'  => [], // $this->airportRepo->selectBoxList(true),
+            'airport_list'  => $airport_list, // $this->airportRepo->selectBoxList(true),
             'pirep_fields'  => $this->pirepFieldRepo->all(),
             'field_values'  => [],
             'fare_values'   => $fare_values,

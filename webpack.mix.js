@@ -30,7 +30,7 @@ function copyAssets()
  */
 function buildFrontendAssets()
 {
-  mix.sass('resources/sass/now-ui/now-ui-kit.scss', 'public/assets/frontend/css/now-ui-kit.css')
+  mix.sass('resources/sass/spark24/spark24.scss', 'public/assets/frontend/css/spark24.css')
     .sourceMaps();
 
   mix.scripts([

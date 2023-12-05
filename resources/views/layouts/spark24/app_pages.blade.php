@@ -37,71 +37,32 @@
     }
   </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background: #333333">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <div class="form-inline my-2 my-lg-0">
-      @include('nav')
-    </div>
-  </div>
-</nav>
+@include('nav')
 <!-- End Navbar -->
-<div id="top_anchor" class="clearfix" style="height: 25px;"></div>
-<div class="wrapper">
-  <div class="clear"></div>
-  <div class="container-fluid" style="width: 85%!important;">
+<div>
 
     {{-- These should go where you want your content to show up --}}
     @include('flash.message')
     @yield('content')
     {{-- End the above block--}}
-
-  </div>
   <div class="clearfix" style="height: 200px;"></div>
 
-  <footer class="footer footer-default">
-    <div class="container">
-      <div class="copyright">
-        {{--
-        This "powered by phpVMS" must be kept visible. as-per the the license
-        If you want to remove the attribution, a license can be purchased
-        https://docs.phpvms.net/#license
-        --}}
-        powered by <a href="http://www.phpvms.net" target="_blank">phpvms</a>
-      </div>
-    </div>
-  </footer>
-</div>
 
+</div>
+<footer class="footer footer-default">
+  <div class="container">
+    <div class="copyright">
+      {{--
+      This "powered by phpVMS" must be kept visible. as-per the the license
+      If you want to remove the attribution, a license can be purchased
+      https://docs.phpvms.net/#license
+      --}}
+      powered by <a href="http://www.phpvms.net" target="_blank">phpvms</a> along with a copious amount of in-house developed modules.
+    </div>
+  </div>
+</footer>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 {{-- Start of the required tags block. Don't remove these or things will break!! --}}
