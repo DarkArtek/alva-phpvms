@@ -1,0 +1,6 @@
+[submodule "CHTrips"]
+	path = CHTrips
+	url = https://github.com/fsvaos/CHTrips
+[submodule "modules/CHTrips"]
+	path = modules/CHTrips
+	url = https://github.com/fsvaos/CHTrips
