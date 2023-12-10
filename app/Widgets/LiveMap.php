@@ -15,6 +15,7 @@ class LiveMap extends Widget
         'height' => '800px',
         'width'  => '100%',
         'table'  => true,
+        'wide' => false,
     ];
 
     /**
@@ -32,7 +33,16 @@ class LiveMap extends Widget
         $center_coords = array_map(function ($c) {
             return (float) trim($c);
         }, explode(',', $center_coords));
-
+        if ($this->config['wide'])
+        {
+            return view('widgets.live_map_wide', [
+                'config'    => $this->config,
+                'pireps'    => $pireps,
+                'positions' => $positions,
+                'center'    => $center_coords,
+                'zoom'      => setting('acars.default_zoom', 5),
+            ]);
+        }
         return view('widgets.live_map', [
             'config'    => $this->config,
             'pireps'    => $pireps,

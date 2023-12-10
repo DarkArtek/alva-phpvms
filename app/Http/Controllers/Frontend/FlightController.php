@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Contracts\Controller;
+use App\Models\Airport;
 use App\Models\Bid;
 use App\Models\Enums\FlightType;
 use App\Models\Flight;
@@ -165,10 +166,21 @@ class FlightController extends Controller
             $saved_flights[$bid->flight_id] = $bid->id;
         }
 
+        $airports = [];
+        // Add the blank
+        $airports[''] = '';
+        if ($request->has('dep_icao') && !empty($request->dep_icao)) {
+            $apt = Airport::find($request->dep_icao);
+            $airports[$apt->id] = $apt->full_name;
+        }
+        if ($request->has('arr_icao') && !empty($request->arr_icao)) {
+            $apt = Airport::find($request->arr_icao);
+            $airports[$apt->id] = $apt->full_name;
+        }
         return view('flights.index', [
             'user'          => $user,
             'airlines'      => $this->airlineRepo->selectBoxList(true),
-            'airports'      => [],
+            'airports'      => $airports,
             'flights'       => $flights,
             'saved'         => $saved_flights,
             'subfleets'     => $this->subfleetRepo->selectBoxList(true),

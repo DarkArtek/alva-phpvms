@@ -17,12 +17,18 @@
   <link rel="shortcut icon" type="image/png" href="{{ public_asset('/assets/img/favicon.png') }}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10,400;-10,700;0,400;0,700&display=swap" rel="stylesheet">
-  <link href="{{ public_asset('/assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10,400;-10,700;0,400;0,700;0,600&display=swap" rel="stylesheet">
+  {{--<link href="{{ public_asset('/assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet"/> --}}
+  <link href="{{ public_mix('/assets/frontend/css/spark24.css') }}" rel="stylesheet"/>
 
 
   {{-- Start of the required files in the head block --}}
   <link href="{{ public_mix('/assets/global/css/vendor.css') }}" rel="stylesheet"/>
+  <style>
+    .select2-search { background-color: #222; color:white; }
+    .select2-search input { background-color: #333; color: white; }
+    .select2-results { background-color: #333; color: white; }
+  </style>
   @yield('css')
   @yield('scripts_head')
   {{-- End of the required stuff in the head block --}}
@@ -41,13 +47,18 @@
 <!-- Navbar -->
 @include('nav')
 <!-- End Navbar -->
-<div>
+<div id="top_anchor" class="clearfix" style="height: 25px;"></div>
+<div class="wrapper">
+  <div class="clear"></div>
+  <div class="container-fluid" style="width: 85%!important;">
 
     {{-- These should go where you want your content to show up --}}
     @include('flash.message')
     @yield('content')
     {{-- End the above block--}}
 
+  </div>
+  <div class="clearfix"></div>
 
 </div>
 <footer class="bg-dark text-center text-lg-start mt-auto">
@@ -84,7 +95,7 @@ with the EU Cookie Law https://privacypolicies.com/blog/eu-cookie-law
           text: "#838391"
         },
         button: {
-          "background": "#067ec1"
+          "background": "#ac0000"
         }
       },
       position: "top",
@@ -105,18 +116,18 @@ You can modify to any tracking code and re-use that settings field, or
 just remove it completely. Only added as a convenience factor
 --}}
 @php
-$gtag = setting('general.google_analytics_id');
+  $gtag = setting('general.google_analytics_id');
 @endphp
 @if($gtag)
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ $gtag }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ $gtag }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', '{{ $gtag }}');
-</script>
+    gtag('config', '{{ $gtag }}');
+  </script>
 @endif
 {{-- End of the Google Analytics code --}}
 
