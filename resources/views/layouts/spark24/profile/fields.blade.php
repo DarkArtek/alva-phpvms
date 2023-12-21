@@ -26,13 +26,19 @@
       </tr>
 
       <tr>
-        <td>Discord ID <span class="small">
-            <a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-" target="_blank">
-              How to find your ID</a></span>
-        </td>
+        <td>Discord ID <span class="small"></span></td>
         <td>
           <div class="input-group form-group-no-border{{ $errors->has('discord_id') ? ' has-danger' : '' }}">
-            {{ Form::text('discord_id', null, ['class' => 'form-control']) }}
+            @if(session()->has('discord_id'))
+              <div>Discord Account ID Retrieved. Press "Update Profile" To Save</div>
+              <input type="hidden" name="discord_id" value="{{session()->get('discord_id')}}">
+            @elseif($user->discord_id === "")
+              <a class="btn btn-primary" href="https://discord.com/api/oauth2/authorize?client_id=994863946681028698&response_type=code&redirect_uri=http%3A%2F%2Fspk-phpvms-24.test%2Fspark24%2Fdiscord%2Foauth&scope=identify+email">Link Discord</a>
+            @else
+              <input type="hidden" name="discord_id" value="{{$user->discord_id}}">
+              <a class="btn btn-warning" href="/spark24/discord/unlink">Unlink Discord</a>
+            @endif
+
           </div>
           @if ($errors->has('discord_id'))
             <p class="text-danger">{{ $errors->first('discord_id') }}</p>

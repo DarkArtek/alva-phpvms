@@ -57,7 +57,6 @@ class SetActiveTheme implements Middleware
             Log::error($e->getMessage());
             $theme = 'default';
         }
-
         if (!empty($theme)) {
             Theme::set($theme);
         }

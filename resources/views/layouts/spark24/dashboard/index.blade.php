@@ -16,7 +16,9 @@
       @endif
       <div class="card mb-4">
         <div class="card-body text-center">
-          <h3>Welcome To {{ \App\Models\Airport::find($current_airport)->name }}</h3>
+          @if(!is_null($current_airport))
+            <h3>Welcome To {{ \App\Models\Airport::find($current_airport)->name }}</h3>
+          @endif
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <a href="{{route('frontend.flights.search', ['dep_icao' => $current_airport])}}">
