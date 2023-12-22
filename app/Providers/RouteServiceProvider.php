@@ -171,6 +171,17 @@ class RouteServiceProvider extends ServiceProvider
                 Route::get('lang/{lang}', 'LanguageController@switchLang')->name('lang.switch');
             });
 
+            Route::group([
+                'namespace'  => 'Auth',
+                'prefix'     => 'auth',
+                'as'         => 'auth.',
+                'middleware' => 'auth',
+            ], function () {
+                Route::get('discord/redirect', 'OAuthController@redirectToDiscordProvider')->name('discord.redirect');
+                Route::get('discord/callback', 'OAuthController@handleDiscordProviderCallback')->name('discord.callback');
+                Route::get('discord/logout', 'OAuthController@logoutDiscordProvider')->name('discord.logout');
+            });
+
             Route::get('/logout', 'Auth\LoginController@logout')->name('auth.logout');
             Auth::routes(['verify' => true]);
         });
@@ -401,11 +412,17 @@ class RouteServiceProvider extends ServiceProvider
             Route::match(['post'], 'maintenance/cache', 'MaintenanceController@cache')
                 ->name('maintenance.cache')->middleware('ability:admin,maintenance');
 
+            Route::match(['post'], 'maintenance/queue', 'MaintenanceController@queue')
+                ->name('maintenance.queue')->middleware('ability:admin,maintenance');
+
             Route::match(['post'], 'maintenance/update', 'MaintenanceController@update')
                 ->name('maintenance.update')->middleware('ability:admin,maintenance');
 
             Route::match(['post'], 'maintenance/forcecheck', 'MaintenanceController@forcecheck')
                 ->name('maintenance.forcecheck')->middleware('ability:admin,maintenance');
+
+            Route::match(['post'], 'maintenance/reseed', 'MaintenanceController@reseed')
+                ->name('maintenance.reseed')->middleware('ability:admin,maintenance');
 
             Route::match(['post'], 'maintenance/cron_enable', 'MaintenanceController@cron_enable')
                 ->name('maintenance.cron_enable')->middleware('ability:admin,maintenance');
