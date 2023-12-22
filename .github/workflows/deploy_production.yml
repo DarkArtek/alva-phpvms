@@ -3,6 +3,8 @@ name: Deploy Production
 # Trigger the workflow on push and
 # pull request events on the production branch
 on:
+  release:
+    types: [published]
   push:
     branches:
       - production
