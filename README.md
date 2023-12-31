@@ -1,8 +1,6 @@
-# phpVMS <sup>7</sup>
+# Spark24/7
 
-[![Build](https://github.com/nabeelio/phpvms/workflows/Build/badge.svg?branch=dev)](https://github.com/nabeelio/phpvms/actions) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d668bebb0a3c46bda381af16ce3d9450)](https://www.codacy.com/app/nabeelio/phpvms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nabeelio/phpvms&amp;utm_campaign=Badge_Grade) [![Latest Stable Version](https://poser.pugx.org/nabeel/phpvms/v/stable)](https://packagist.org/packages/nabeel/phpvms) ![StyleCI](https://github.styleci.io/repos/93688482/shield?branch=dev) [![License](https://poser.pugx.org/nabeel/phpvms/license)](https://packagist.org/packages/nabeel/phpvms)
-
-The next phpvms version built on the laravel framework. work in progress. The latest documentation, with installation instructions is available [on the phpVMS documentation](https://docs.phpvms.net/) page.
+The Spark Virtual Aviation Website, built on phpVMS 7 and custom modules.
 
 ## Installation
 
@@ -84,3 +82,7 @@ make build-assets
 ```
 
 This will build all of the assets according to the webpack file.
+
+### Submodules
+
+This repository utilizes Submodules. Some modules are public, while others are private.
