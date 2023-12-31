@@ -9,14 +9,14 @@
     <div class="container mb-2">
       <div class="row">
         <div class="col-lg-4">
-          <div class="card h-100">
+          <div class="card h-100 mb-4">
             <div class="card-body text-center">
               <h3>Modern Website</h3>
               <div>Built on phpVMS 7 with in-house custom modules to provide you with a unique experience you won't get anywhere else, with both smartCARS 3 and vmsACARS.</div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 mb-4">
           <div class="card h-100">
             <div class="card-body text-center">
               <h3>Free Flights</h3>
@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 mb-4">
           <div class="card h-100">
             <div class="card-body text-center">
               <h3>Strong Community</h3>
@@ -91,10 +91,43 @@
       </div>
       <div class="tab-pane fade" id="soa" role="tabpanel" aria-labelledby="contact-tab">
         <p>
-          GLOW by Spark represents Spark Virtual Airlines' commuter subsidiary, connecting regional airports to the main hubs. This subsidiary focuses on serving smaller communities and enhancing accessibility to larger airports within the network. GLOW flights are designed for efficiency and convenience, providing frequent and reliable connections for passengers traveling to and from regional airports. The commuter subsidiary plays a crucial role in expanding Spark's reach and fostering connectivity across a broader range of locations.
+          Mark Fill This Out
         </p>
       </div>
-      <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="contact-tab">
+        <p>
+          Flying together is the backbone of any online flight simulator community. At Spark, you can expect a wide range
+          of events, from large fly-ins with commercial planes, to poker runs in prop planes.
+        </p>
+      </div>
+    </div>
+    <h1>Fleet</h1>
+    @php
+      $airlines = \App\Models\Airline::whereHas('subfleets')->with((array('subfleets' => function($query) {
+        $query->orderBy('name', 'ASC');
+      })))->get();
+    @endphp
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          @foreach($airlines as $airline)
+            <a class="list-group-item list-group-item-action @if($airline->id == 1) active @endif" id="list-{{$airline->icao}}-list" data-toggle="list" href="#list-{{$airline->icao}}" role="tab" aria-controls="home">{{$airline->name}}</a>
+          @endforeach
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          @foreach($airlines as $airline)
+            <div class="tab-pane fade show @if($airline->id == 1) active @endif" id="list-{{$airline->icao}}" role="tabpanel" aria-labelledby="list-home-list">
+              <ul style="columns: 2">
+                @foreach($airline->subfleets as $sf)
+                  <li>{{$sf->name}}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endforeach
+        </div>
+      </div>
     </div>
     <!-- Subsideries -->
     {{--

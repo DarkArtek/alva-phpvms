@@ -22,9 +22,9 @@
           <span class="flag-icon flag-icon-{{ $user->country }}"></span>
         </p>
       </div>
-        <p class="description" style="color: #9A9A9A;">
-          {{ $user->airline->name }}
-        </p>
+      <p class="description" style="color: #9A9A9A;">
+        {{ $user->airline->name }}
+      </p>
       <div class="social-description">
         @if (!empty($user->rank->image_url))
           <img src="{{ $user->rank->image_url }}" style="width: 160px;">
@@ -105,7 +105,7 @@
                   <h4 class="title title-up">{{ $award->name }}</h4>
                   @if ($award->image_url)
                     <div class="photo-container">
-                        <img src="{{ $award->image_url }}" alt="{{ $award->description }}" style="width: 123px;">
+                      <img src="{{ $award->image_url }}" alt="{{ $award->description }}" style="width: 123px;">
                     </div>
                   @endif
                 </div>
@@ -135,9 +135,14 @@
       <div class="col-sm-12">
         <div class="text-right">
           @if (isset($acars) && $acars === true)
-          <a href="{{ route('frontend.profile.acars') }}" class="btn btn-primary"
-             onclick="alert('Copy or Save to \'My Documents/phpVMS\'')">ACARS Config</a>
-          &nbsp;
+            <a href="{{ route('frontend.profile.acars') }}" class="btn btn-primary"
+               onclick="alert('Copy or Save to \'My Documents/phpVMS\'')">ACARS Config</a>
+            &nbsp;
+          @endif
+          @if(env('DISCORD_OAUTH_ENABLED', false) && !$user->discord_id)
+            <a href="{{ route('auth.discord.redirect') }}" class="btn" style="background-color:#738ADB;">Link Discord Account</a>
+          @elseif(env('DISCORD_OAUTH_ENABLED', false))
+            <a href="{{ route('auth.discord.logout') }}" class="btn" style="background-color:#738ADB;">Unlink Discord Account</a>
           @endif
           <a href="{{ route('frontend.profile.regen_apikey') }}" class="btn btn-warning"
              onclick="return confirm('Are you sure? This will reset your API key!')">@lang('profile.newapikey')</a>
@@ -155,10 +160,6 @@
           <tr>
             <td>@lang('profile.apikey')&nbsp;&nbsp;<span class="description">(@lang('profile.dontshare'))</span></td>
             <td><span id="apiKey_show" style="display: none">{{ $user->api_key }} <i class="fas fa-eye-slash" onclick="apiKeyHide()"></i></span><span id="apiKey_hide">@lang('profile.apikey-show') <i class="fas fa-eye" onclick="apiKeyShow()"></i></span></td>
-          </tr>
-          <tr>
-            <td>Discord ID</td>
-            <td>{{ $user->discord_id ?? '-' }}</td>
           </tr>
           <tr>
             <td>@lang('common.timezone')</td>

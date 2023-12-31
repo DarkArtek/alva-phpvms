@@ -4,6 +4,17 @@ $body-bg: #fcfcfc;
 $card-border-radius: 0;
 
 $font-size-navbar: 12px;
+
+.ul_fleet {
+  columns: 2;
+}
+
+
 // Import Bootstrap
 @import "bootstrap/scss/bootstrap";
 
+@include media-breakpoint-up(md) {
+  .ul_fleet {
+    columns: 1
+  }
+}
