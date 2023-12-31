@@ -14,6 +14,13 @@ git pull spk production
 # Install composer dependencies
 composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
+# Clear phpVMS Cache
+php artisan phpvms:caches
+
+php artisan cache:clear
+
+php artisan view:clear
+
 # Clear the old cache
 php artisan clear-compiled
 

@@ -3,7 +3,6 @@
     "/assets/installer/js/app.js": "/assets/installer/js/app.js?id=01a9133b075ee620c32752b454523b2e",
     "/assets/admin/js/app.js": "/assets/admin/js/app.js?id=895aa48746bf636a753853a4f9abf7db",
     "/assets/admin/css/vendor.min.css": "/assets/admin/css/vendor.min.css?id=d56b1dd37907966d9967e4322206675f",
-    "/assets/frontend/css/spark24.css": "/assets/frontend/css/spark24.css?id=e7ecd09db2fae27f0ccf6fc9f2dcade5",
     "/assets/fonts/glyphicons-halflings-regular.woff2": "/assets/fonts/glyphicons-halflings-regular.woff2?id=349344e92fb16221dd5621c254fdc45e",
     "/assets/admin/fonts/glyphicons-halflings-regular.woff2": "/assets/admin/fonts/glyphicons-halflings-regular.woff2?id=349344e92fb16221dd5621c254fdc45e",
     "/assets/admin/img/clear.png": "/assets/admin/img/clear.png?id=63b3af84650a0145d61af86a02fac4b6",
@@ -3286,5 +3285,6 @@
     "/assets/installer/css/vendor.css": "/assets/installer/css/vendor.css?id=02b6be4d16ffad9208bc37f6f6363a44",
     "/assets/installer/js/vendor.js": "/assets/installer/js/vendor.js?id=4398fa9f7340f95a110794571c7e8327",
     "/assets/global/js/vendor.js": "/assets/global/js/vendor.js?id=bb691042c0629f4af9f52fe0c8a81a49",
-    "/assets/global/css/vendor.css": "/assets/global/css/vendor.css?id=fe732e89a845d219b83b2bb44229dc00"
+    "/assets/global/css/vendor.css": "/assets/global/css/vendor.css?id=fe732e89a845d219b83b2bb44229dc00",
+    "/assets/frontend/css/spark24.css": "/assets/frontend/css/spark24.css?id=d8efad12a12133b14493ff3b553beea8"
 }
