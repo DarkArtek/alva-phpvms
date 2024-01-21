@@ -3,8 +3,10 @@ name: Deploy Production
 # Trigger the workflow on push and
 # pull request events on the production branch
 on:
+  workflow_dispatch:
   release:
     types: [published]
+  
 
 # Authenticate to the the server via ssh
 # and run our deployment script
