@@ -22,4 +22,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: "cd ~/spk-phpvms-24 && ./.scripts/deploy.sh"
+          script: "~/spk-phpvms-24/.scripts/deploy.sh"
