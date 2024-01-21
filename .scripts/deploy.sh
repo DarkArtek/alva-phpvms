@@ -3,7 +3,6 @@ set -e
 
 echo "Deployment started ..."
 
-su spark
 # Enter maintenance mode or return true
 # if already is in maintenance mode
 (php artisan down) || true
