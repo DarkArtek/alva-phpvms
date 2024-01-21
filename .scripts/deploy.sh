@@ -8,10 +8,10 @@ echo "Deployment started ..."
 (php artisan down) || true
 
 # Pull the latest version of the app
-git pull spk production
+git pull origin production
 
 # Install composer dependencies
-composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+composer install -no-interaction
 
 # Clear phpVMS Cache
 php artisan phpvms:caches
