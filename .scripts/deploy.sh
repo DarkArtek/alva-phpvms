@@ -11,7 +11,7 @@ echo "Deployment started ..."
 git pull origin production
 
 # Install composer dependencies
-composer install -no-interaction
+composer install --no-interaction
 
 # Clear phpVMS Cache
 php artisan phpvms:caches
