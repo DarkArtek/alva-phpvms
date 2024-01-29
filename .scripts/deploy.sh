@@ -10,6 +10,8 @@ echo "Deployment started ..."
 # Pull the latest version of the app
 git pull origin production
 
+git submodule update --recursive
+
 # Install composer dependencies
 composer install --no-interaction
 
