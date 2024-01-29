@@ -21,6 +21,12 @@
   {{--<link href="{{ public_asset('/assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet"/> --}}
   <link href="{{ public_mix('/assets/frontend/css/spark24.css') }}" rel="stylesheet"/>
 
+  <meta name="description" content="Passionate Aviators Revolutionizing Virtual Aviation"/>
+  <meta name="author" content="Spark Aviation Group"/>
+  <meta name="og:title" content="Spark Virtual Aviation"/>
+  <meta name="og:description" content="Passionate Aviators Revolutionizing Virtual Aviation"/>
+  <meta name="og:image" content="{{asset('assets/spark24/login_01.png')}}"/>
+  <meta name="og:type" content="website"/>
 
   {{-- Start of the required files in the head block --}}
   <link href="{{ public_mix('/assets/global/css/vendor.css') }}" rel="stylesheet"/>
