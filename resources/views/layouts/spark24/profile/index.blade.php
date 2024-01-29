@@ -99,8 +99,10 @@
         <h3 class="description">@lang('profile.your-awards')</h3>
         @foreach($user->awards->chunk(3) as $awards)
           <div class="row">
+
             @foreach($awards as $award)
-              <div class="card card-signup">
+              <div class="col-3">
+              <div class="card">
                 <div class="header header-primary text-center">
                   <h4 class="title title-up">{{ $award->name }}</h4>
                   @if ($award->image_url)
@@ -116,6 +118,7 @@
                 </div>
                 <div class="footer text-center">
                 </div>
+              </div>
               </div>
             @endforeach
           </div>
