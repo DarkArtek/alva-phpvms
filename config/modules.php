@@ -12,7 +12,7 @@ return [
             'routes'                 => 'Http/Routes/web.php',
             'routes-api'             => 'Http/Routes/api.php',
             'routes-admin'           => 'Http/Routes/admin.php',
-            'provider'               => 'Providers/AppServiceProvider.php',
+            'provider'               => 'Providers/CHFreeFlightProvider.php',
             'route-provider'         => 'Providers/RouteServiceProvider.php',
             'event-service-provider' => 'Providers/EventServiceProvider.php',
             'views/index'            => 'Resources/views/index.blade.php',

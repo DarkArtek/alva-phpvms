@@ -7,6 +7,7 @@ use App\Http\Requests\CreatePirepRequest;
 use App\Http\Requests\UpdatePirepRequest;
 use App\Models\Airport;
 use App\Models\Enums\PirepSource;
+use App\Models\Enums\PirepFieldSource;
 use App\Models\Enums\PirepState;
 use App\Models\Fare;
 use App\Models\Pirep;
