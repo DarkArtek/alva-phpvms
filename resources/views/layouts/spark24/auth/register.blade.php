@@ -3,11 +3,7 @@
 
 @section('content')
 
-  @if(session()->has('discord_id') || request()->query('step') == 2)
-    @include('auth.register_form')
-  @else
-    @include('auth.register_welcome')
-  @endif
+  @include('auth.register_form')
 @endsection
 
 @section('scripts')

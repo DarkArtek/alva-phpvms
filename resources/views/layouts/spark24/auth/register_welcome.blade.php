@@ -9,11 +9,10 @@
     you may have, and many more.
   </p>
   <p>
-    Before we show you the registration form, please consider linking your Discord account now.
+    Click the link below to join our Discord
   </p>
   <div class="text-center">
-    <a class="btn btn-primary btn-block" href="https://discord.com/api/oauth2/authorize?client_id=994863946681028698&response_type=code&redirect_uri=http%3A%2F%2Fspk-phpvms-24.test%2Fspark24%2Fdiscord%2Foauth&scope=identify+email">Link Discord</a>
-    <a class="btn btn-link btn-block" href="/register?step=2">Skip For Now</a>
+    <a class="btn btn-primary btn-block" href="https://discord.gg/9QMKUAE3ag">Join The Discord</a>
   </div>
 </div>
 
