@@ -1,9 +1,6 @@
-[submodule "CHTrips"]
-	path = CHTrips
-	url = https://github.com/fsvaos/CHTrips
 [submodule "modules/CHTrips"]
 	path = modules/CHTrips
-	url = https://github.com/fsvaos/CHTrips
+	url = https://github.com/cardinalhorizon/CHTrips
 [submodule "modules/Spark24"]
 	path = modules/Spark24
 	url = https://github.com/SparkVA/Spark24.git
