@@ -7,6 +7,7 @@ use App\Http\Requests\CreatePirepRequest;
 use App\Http\Requests\UpdatePirepRequest;
 use App\Models\Airport;
 use App\Models\Enums\PirepSource;
+use App\Models\Enums\PirepFieldSource;
 use App\Models\Enums\PirepState;
 use App\Models\Fare;
 use App\Models\Pirep;
@@ -317,7 +318,7 @@ class PirepController extends Controller
 
                 $aircraft->subfleet->fares = collect($fares);
             }
-            // TODO: Set more fields from the Simbrief to the PIREP form
+        // TODO: Set more fields from the Simbrief to the PIREP form
         } else {
             $aircraft_list = $this->aircraftList(true);
         }

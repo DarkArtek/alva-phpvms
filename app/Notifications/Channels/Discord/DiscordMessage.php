@@ -149,10 +149,16 @@ class DiscordMessage
             'timestamp'   => Carbon::now('UTC'),
         ];
 
+        if (empty($embeds['image'])) {
+            unset($embeds['image']);
+        }
+
         if (!empty($this->fields)) {
             $embeds['fields'] = $this->fields;
         }
-
+        if (empty($embeds['image'])) {
+            unset($embeds['image']);
+        }
         if (!empty($this->footer)) {
             $embeds['footer'] = [
                 'text' => $this->footer,
