@@ -6,17 +6,17 @@
     <div class="white-text mt-auto mx-auto mb-2">
       <h2>Re-Igniting Virtual Aviation</h2>
     </div>
-    <div class="container mb-2">
+    <div class="container mb-4">
       <div class="row">
         <div class="col-lg-4">
-          <div class="card h-100 mb-4">
+          <div class="card h-100">
             <div class="card-body text-center">
               <h3>Modern Website</h3>
               <div>Built on phpVMS 7 with in-house custom modules to provide you with a unique experience you won't get anywhere else, with both smartCARS 3 and vmsACARS.</div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-4">
           <div class="card h-100">
             <div class="card-body text-center">
               <h3>Free Flights</h3>
@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-4">
           <div class="card h-100">
             <div class="card-body text-center">
               <h3>Strong Community</h3>
@@ -45,9 +45,11 @@
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="shuttle-tab" data-toggle="tab" data-target="#charter" type="button" role="tab" aria-controls="profile" aria-selected="false">Charters</button>
       </li>
+      {{--
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="glow-tab" data-toggle="tab" data-target="#soa" type="button" role="tab" aria-controls="contact" aria-selected="false">Special Operations</button>
       </li>
+      --}}
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="elite-tab" data-toggle="tab" data-target="#events" type="button" role="tab" aria-controls="contact" aria-selected="false">Events</button>
       </li>
@@ -89,11 +91,13 @@
           be there to create memorable experiences role-playing as a pilot in our virtual world.
         </p>
       </div>
+      {{--
       <div class="tab-pane fade" id="soa" role="tabpanel" aria-labelledby="contact-tab">
         <p>
           Mark Fill This Out
         </p>
       </div>
+      --}}
       <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="contact-tab">
         <p>
           Flying together is the backbone of any online flight simulator community. At Spark, you can expect a wide range
