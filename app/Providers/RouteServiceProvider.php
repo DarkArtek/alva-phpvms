@@ -106,6 +106,10 @@ class RouteServiceProvider extends ServiceProvider
             'middleware' => ['web'],
             'namespace'  => $this->namespace,
         ], function () {
+            // Discord
+            Route::get('/discord', function() {
+                return redirect()->away('https://discord.com/invite/m7vJacNMPu');
+            });
             Route::group([
                 'namespace'  => 'Frontend',
                 'prefix'     => '',
@@ -113,7 +117,6 @@ class RouteServiceProvider extends ServiceProvider
                 'middleware' => (config('phpvms.registration.email_verification', false) ? ['auth', 'verified'] : ['auth']),
             ], function () {
                 Route::resource('dashboard', 'DashboardController');
-
                 Route::get('airports/{id}', 'AirportController@show')->name('airports.show');
 
                 // Download a file
