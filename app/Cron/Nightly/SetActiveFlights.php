@@ -40,14 +40,12 @@ class SetActiveFlights extends Listener
          * @var Flight $flight
          */
         foreach ($flights as $flight) {
-            if (!$flight->active) {
+            if (!$flight->active || blank($flight->owner_type)) {
                 continue;
             }
 
             // Set to visible by default if not owned by a module
-            if ($flight['owner_type'] === null) {
-                $flight->visible = true;
-            }
+            $flight->visible = true;
 
             // dates aren't set, so just save if there were any changes above
             // and move onto the next one
