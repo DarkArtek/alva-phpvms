@@ -21,7 +21,7 @@
   </style>
 </head>
 
-<body class="login-page" style="background: url('{{ asset('/assets/spark24/login_01.png') }}') center no-repeat; background-size: cover;">
+<body class="login-page" style="background: url('{{ asset('/assets/spark24/login_feb_24.png') }}') center no-repeat; background-size: cover;">
 <!-- Navbar -->
 
 <!-- End Navbar -->
