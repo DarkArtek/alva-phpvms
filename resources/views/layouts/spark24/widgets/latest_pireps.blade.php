@@ -1,6 +1,6 @@
 <div class="row">
   @foreach($pireps as $pirep)
-    <div class="col-lg-6 col-sm-12">
+    <div class="col-sm-12 my-2">
       <div class="card">
         <div class="card-body" style="min-height: 0">
           <div class="row">
