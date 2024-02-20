@@ -108,7 +108,7 @@
     <h1>Fleet</h1>
     @php
       $airlines = \App\Models\Airline::whereHas('subfleets')->with((array('subfleets' => function($query) {
-        $query->orderBy('name', 'ASC');
+        $query->whereHas('aircraft')->orderBy('name', 'ASC');
       })))->get();
     @endphp
     <div class="row">
