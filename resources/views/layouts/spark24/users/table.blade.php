@@ -10,18 +10,18 @@
   </thead>
   <tbody>
   @foreach($users as $user)
-    <tr>
+    <tr style="vertical-align: center">
       <td style="width: 80px;">
         <div class="photo-container">
           @if ($user->avatar == null)
             <img class="rounded-circle"
-                 src="{{ $user->gravatar(256) }}&s=256"/>
+                 src="{{ $user->gravatar(256) }}&s=256" style="height: 50px;"/>
           @else
-            <img src="{{ $user->avatar->url }}">
+            <img class="rounded-circle" src="{{ $user->avatar->url }}" style="height: 50px;">
           @endif
         </div>
       </td>
-      <td>
+      <td style="vertical-align: center">
         <a href="{{ route('frontend.users.show.public', [$user->id]) }}">
           {{$user->ident}}&nbsp;{{ $user->name_private }}
         </a>

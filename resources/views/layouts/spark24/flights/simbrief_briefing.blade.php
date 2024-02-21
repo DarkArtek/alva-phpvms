@@ -9,21 +9,21 @@
     </div>
     <div class="col">
       @if (empty($simbrief->pirep_id))
-        <a class="btn btn-outline-info pull-right btn-lg"
+        <a class="btn btn-outline-info pull-right"
            style="margin-top: -10px; margin-bottom: 5px"
            href="{{ url(route('frontend.simbrief.prefile', [$simbrief->id])) }}">Prefile PIREP</a>
       @endif
     </div>
     @if (!empty($simbrief->xml->params->static_id) && $user->id === $simbrief->user_id)
     <div class="col">
-        <a class="btn btn-secondary btn-lg"
+        <a class="btn btn-secondary"
            style="margin-top: -10px; margin-bottom: 5px"
            href="#"
            data-toggle="modal" data-target="#OFP_Edit">Edit OFP</a>
     </div>
     @endif
     <div class="col">
-      <a class="btn btn-primary btn-lg"
+      <a class="btn btn-primary"
          style="margin-top: -10px; margin-bottom: 5px"
          href="{{ url(route('frontend.simbrief.generate_new', [$simbrief->id])) }}">Generate New OFP</a>
     </div>
@@ -32,11 +32,11 @@
         @if ($bid)
           <a href="vmsacars:bid/{{$bid->id}}"
              style="margin-top: -10px; margin-bottom: 5px"
-             class="btn btn-info btn-lg">Load in vmsACARS</a>
+             class="btn btn-info">Load in vmsACARS</a>
         @else
           <a href="vmsacars:flight/{{$flight->id}}"
              style="margin-top: -10px; margin-bottom: 5px"
-             class="btn btn-info btn-lg">Load in vmsACARS</a>
+             class="btn btn-info">Load in vmsACARS</a>
         @endif
       @endif
     </div>
@@ -193,7 +193,7 @@
             </h6>
             <div class="form-container-body">
               <div class="row">
-                <div class="col-12">
+                <div class="col-12 mb-4">
                   <select id="download_fms_select" class="select2 custom-select">
                     @foreach($simbrief->files as $fms)
                       <option value="{{ $fms['url'] }}">{{ $fms['name'] }}</option>
@@ -202,7 +202,7 @@
                   <br/>
                   <input id="download_fms"
                          type="submit"
-                         class="btn btn-outline-primary pull-right"
+                         class="btn btn-outline-primary pull-right mt-2"
                          value="Download"/>
                 </div>
               </div>
@@ -254,10 +254,9 @@
                 <div class="row">
                   @foreach($images as $image)
                     <div class="col-6 text-center">
-                      <p>
-                        <img src="{{ $image['url'] }}" alt="{{ $image['name'] }}"/>
-                        <small class="text-muted">{{ $image['name'] }}</small>
-                      </p>
+                      <small class="text-muted">{{ $image['name'] }}</small>
+                      <img src="{{ $image['url'] }}" alt="{{ $image['name'] }}" style="display: block; width: 100%;"/>
+
                     </div>
                   @endforeach
                 </div>
@@ -269,15 +268,7 @@
 
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      @if (empty($simbrief->pirep_id))
-        <a class="btn btn-outline-info pull-right"
-           style="margin-top: -10px;margin-bottom: 5px"
-           href="{{ url(route('frontend.simbrief.prefile', [$simbrief->id])) }}">Prefile PIREP</a>
-      @endif
-    </div>
-  </div>
+
 
   {{-- SimBrief Edit Modal --}}
   @if(!empty($simbrief->xml->params->static_id))

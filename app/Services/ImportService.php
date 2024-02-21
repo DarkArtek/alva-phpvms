@@ -212,8 +212,9 @@ class ImportService extends Service
     public function importFlights($csv_file, bool $delete_previous = true)
     {
         if ($delete_previous) {
-            Flight::truncate();
-            FlightFieldValue::truncate();
+            //Flight::truncate();
+            //FlightFieldValue::truncate();
+            Flight::whereNull('owner_type')->delete();
         }
 
         $importer = new FlightImporter();

@@ -72,7 +72,7 @@ $style = [
           <td style="{{ $style['email-masthead'] }}">
             <a style="{{ $fontFamily }} {{ $style['email-masthead_name'] }}"
                href="{{ url('/') }}" target="_blank">
-              {{ config('app.name') }}
+              <img src="{{asset('assets/spark24/SparkLogo.svg')}}" alt="{{ config('app.name') }}" style="width: 75%;"/>
             </a>
           </td>
         </tr>

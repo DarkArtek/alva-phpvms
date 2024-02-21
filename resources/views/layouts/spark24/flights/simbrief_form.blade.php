@@ -187,12 +187,12 @@
                       <td>
                         <select name="contpct" class="form-control">
                           <option value="0">None</option>
-                          <option value="auto">AUTO</option>
+                          <option value="auto" selected>AUTO</option>
                           <option value="easa">EASA</option>
                           <option value="0.03/5">3% or 05 MIN</option>
                           <option value="0.03/10">3% or 10 MIN</option>
                           <option value="0.03/15">3% or 15 MIN</option>
-                          <option value="0.05/5" selected>5% or 05 MIN</option>
+                          <option value="0.05/5" >5% or 05 MIN</option>
                           <option value="0.05/10">5% or 10 MIN</option>
                           <option value="0.05/15">5% or 15 MIN</option>
                           <option value="0.03">3%</option>
@@ -210,10 +210,10 @@
                       <td>Reserve Fuel:</td>
                       <td>
                         <select name="resvrule" class="form-control">
-                          <option value="auto">AUTO</option>
+                          <option value="auto" selected>AUTO</option>
                           <option value="0">0 MIN</option>
                           <option value="15">15 MIN</option>
-                          <option value="30" selected>30 MIN</option>
+                          <option value="30">30 MIN</option>
                           <option value="45">45 MIN</option>
                           <option value="60">60 MIN</option>
                           <option value="75">75 MIN</option>
@@ -243,8 +243,8 @@
                       <td>ETOPS Planning:</td>
                       <td>
                         <select name="etops" class="form-control">
-                          <option value="0" selected>Disabled</option>
-                          <option value="1">Enabled</option>
+                          <option value="0">Disabled</option>
+                          <option value="1" selected>Enabled</option>
                         </select>
                       </td>
                     </tr>

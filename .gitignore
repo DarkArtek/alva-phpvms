@@ -86,3 +86,4 @@ sync.sh
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+/gs_service_account.json

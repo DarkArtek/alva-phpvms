@@ -17,7 +17,7 @@
 <div class="row">
 
   @foreach($flights as $flight)
-    <div class="col-lg-6 col-sm-12 mb-2">
+    <div class="col-md-12 mb-2">
       <div class="card">
         <div class="card-body" style="min-height: 0">
           <div class="row">
