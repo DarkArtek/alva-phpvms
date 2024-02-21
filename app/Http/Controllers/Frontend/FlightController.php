@@ -73,8 +73,9 @@ class FlightController extends Controller
     public function search(Request $request): View
     {
         $where = [
-            'active'  => true,
-            'visible' => true,
+            'active'     => true,
+            'visible'    => true,
+            'owner_type' => null
         ];
 
         /** @var \App\Models\User $user */
