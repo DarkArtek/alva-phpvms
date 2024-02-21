@@ -3,7 +3,7 @@
 
 @section('content')
   @include('flash::message')
-  <div class="row">
+  <div class="row mb-4">
     <div class="col-sm-12">
       <div class="card">
         <div class="card-header">Approved ACARS Clients</div>
