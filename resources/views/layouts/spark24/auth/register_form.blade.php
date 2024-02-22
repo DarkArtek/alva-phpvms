@@ -24,7 +24,7 @@
           @endif
         </div>
 
-        <input name="airline_id" type="hidden" value="0">
+        <input name="airline_id" type="hidden" value="1">
         <input name="home_airport_id" type="hidden" value="KLAX">
 
         <div class="form-group form-group-no-border {{ $errors->has('country') ? 'has-danger' : '' }}">
