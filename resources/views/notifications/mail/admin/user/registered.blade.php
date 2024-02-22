@@ -4,6 +4,4 @@
   Name: {{ $user->name }}!
   Email: {{ $user->email }}
   State: {{ UserState::label($user->state) }}
-
-  {{ config('app.name') }}
 @endcomponent
