@@ -40,7 +40,7 @@ class SetActiveFlights extends Listener
          * @var Flight $flight
          */
         foreach ($flights as $flight) {
-            if (!$flight->active || blank($flight->owner_type)) {
+            if (filled($flight->owner_type)) {
                 $flight->visible = false;
                 $flight->save();
                 continue;
