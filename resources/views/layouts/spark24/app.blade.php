@@ -69,14 +69,11 @@
 </div>
 <footer class="bg-dark text-center text-lg-start mt-auto">
   <!-- Grid container -->
-  <div class="container p-4">
-
-  </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
   <div class="p-3 text-light">
-    © 2018-2024 Spark Aviation Group. powered by <a href="http://www.phpvms.net" target="_blank">phpvms</a> and a copious amount of in-house developed modules.
+    © 2018-2024 Spark Virtual Aviation. powered by <a href="http://www.phpvms.net" target="_blank">phpvms</a> and a copious amount of in-house developed modules.
   </div>
   <!-- Copyright -->
 </footer>
