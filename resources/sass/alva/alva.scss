@@ -1,0 +1,15 @@
+$body-bg: #fcfcfc !default
+$card-border-radius: 0 !default;
+$font-size-navbar: 12px !default;
+
+.ul_fleet {
+  columns: 2;
+}
+
+//Bootstrap
+@import "bootstrap/scss/bootstrap";
+@include media-breakpoint-up(md) {
+  .ul_fleet {
+    columns: 1;
+  }
+}
