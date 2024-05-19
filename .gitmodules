@@ -1,3 +1,8 @@
 [submodule "modules/Alva"]
     path = modules/Alva
     url = https://github.com/DarkArtek/Alva
+
+[submodule "modules/AlvaTrip"]
+    path = modules/AlvaTrip
+    url = https://github.com/DarkArtek/AlvaTrip
+
