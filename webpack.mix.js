@@ -30,7 +30,7 @@ function copyAssets()
  */
 function buildFrontendAssets()
 {
-  mix.sass('resources/sass/spark24/spark24.scss', 'public/assets/frontend/css/spark24.css')
+  mix.sass('resources/sass/alva/alva.scss', 'public/assets/frontend/css/alva.css')
     .sourceMaps();
 
   mix.scripts([
