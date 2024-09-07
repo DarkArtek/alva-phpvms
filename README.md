@@ -44,7 +44,7 @@ docker run --rm \
     -u "$(id -u):$(id -g)" \
     -v "$(pwd):/var/www/html" \
     -w /var/www/html \
-    laravelsail/php82-composer:latest \
+    laravelsail/php83-composer:latest \
     composer install --ignore-platform-reqs
     
 # Then you can start sail
@@ -72,6 +72,8 @@ sail composer install
 # NPM commands within Laravel Sail...
 sail npm run dev
 ```
+
+To interact with databases (MariaDB, Redis...), please refer to the Laravel Sail documentation
 
 ### Building JS/CSS assets
 
